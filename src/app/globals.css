@@ -1,6 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  /* Change this one value to update the brand color everywhere. */
+  --color-primary: #4d2dff;
+  --color-primary-foreground: white;
+  --color-primary-50: color-mix(in oklab, var(--color-primary) 6%, white);
+  --color-primary-100: color-mix(in oklab, var(--color-primary) 14%, white);
+  --color-primary-200: color-mix(in oklab, var(--color-primary) 30%, white);
+  --color-primary-300: color-mix(in oklab, var(--color-primary) 52%, white);
+  --color-primary-400: color-mix(in oklab, var(--color-primary) 78%, white);
+  --color-primary-500: var(--color-primary);
+  --color-primary-600: color-mix(in oklab, var(--color-primary) 84%, black);
+  --color-primary-700: color-mix(in oklab, var(--color-primary) 68%, black);
+  --color-primary-800: color-mix(in oklab, var(--color-primary) 54%, black);
+  --color-primary-900: color-mix(in oklab, var(--color-primary) 42%, black);
+  --color-primary-950: color-mix(in oklab, var(--color-primary) 28%, black);
+}
+
 :root {
   --background: #f8faf9;
   --foreground: #0f172a;
@@ -23,8 +40,8 @@ body {
 }
 
 ::selection {
-  background: #a7f3d0;
-  color: #052e16;
+  background: var(--color-primary-200);
+  color: var(--color-primary-950);
 }
 
 .container-shell {
@@ -40,7 +57,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #047857;
+  color: var(--color-primary-700);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -51,7 +68,7 @@ body {
   content: "";
   width: 1.5rem;
   height: 1px;
-  background: #10b981;
+  background: var(--color-primary);
 }
 
 .grid-fade {
@@ -74,13 +91,25 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { opacity: 0.45; transform: scale(1); }
-  50% { opacity: 0.75; transform: scale(1.08); }
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
 }
 
 .animate-float {
@@ -92,8 +121,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

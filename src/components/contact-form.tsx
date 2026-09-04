@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const inputClass =
-  "mt-2 h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100";
+  "mt-2 h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-primary-400 focus:ring-4 focus:ring-primary-100";
 const selectClass = `${inputClass} appearance-none`;
 
 export function ContactForm() {
@@ -37,8 +37,8 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="flex min-h-[540px] flex-col items-center justify-center rounded-3xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-emerald-500 text-slate-950">
+      <div className="flex min-h-[540px] flex-col items-center justify-center rounded-3xl border border-primary-200 bg-primary-50 p-8 text-center">
+        <span className="flex size-16 items-center justify-center rounded-full bg-primary-500 text-primary-foreground">
           <CheckCircle2 className="size-8" />
         </span>
         <h2 className="mt-6 text-2xl font-bold text-slate-950">

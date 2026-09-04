@@ -13,7 +13,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Navegue</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-400">Navegue</p>
           <div className="mt-5 flex flex-col gap-3 text-sm">
             <Link href="/#recursos" className="hover:text-white">Recursos</Link>
             <Link href="/#integracoes" className="hover:text-white">Integrações</Link>
@@ -22,13 +22,13 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Fale com a gente</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-400">Fale com a gente</p>
           <div className="mt-5 space-y-4 text-sm">
             <a href="mailto:contato@zimobi.com.br" className="flex items-center gap-3 hover:text-white">
-              <Mail className="size-4 text-emerald-400" /> contato@zimobi.com.br
+              <Mail className="size-4 text-primary-400" /> contato@zimobi.com.br
             </a>
             <p className="flex items-start gap-3 leading-6">
-              <MapPin className="mt-1 size-4 shrink-0 text-emerald-400" />
+              <MapPin className="mt-1 size-4 shrink-0 text-primary-400" />
               Av. Cândido de Abreu, 381<br />Centro Cívico, Curitiba — PR
             </p>
           </div>
