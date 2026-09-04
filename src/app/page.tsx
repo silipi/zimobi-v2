@@ -6,6 +6,7 @@ import {
   Bot,
   Building2,
   Check,
+  CheckCircle2,
   ChevronRight,
   Gauge,
   Inbox,
@@ -15,14 +16,16 @@ import {
   Play,
   RefreshCw,
   Route,
+  Send,
   ShieldCheck,
+  Sparkles,
   Star,
   UsersRound,
   WalletCards,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
-import { ProductMockup } from "@/components/product-mockup";
 
 const features = [
   {
@@ -136,6 +139,133 @@ const testimonials = [
     initials: "EM",
   },
 ];
+
+function ProductMockup() {
+  return (
+    <div className="relative mx-auto w-full max-w-[650px]">
+      <div className="absolute -inset-10 -z-10 rounded-full bg-primary-300/30 blur-3xl" />
+      <div className="glass-card overflow-hidden rounded-[1.75rem] border-white/80 p-2 shadow-2xl shadow-slate-900/15">
+        <div className="flex items-center gap-2 border-b border-slate-100 px-4 py-3">
+          <span className="size-2.5 rounded-full bg-red-300" />
+          <span className="size-2.5 rounded-full bg-amber-300" />
+          <span className="size-2.5 rounded-full bg-primary-300" />
+          <div className="ml-3 h-6 flex-1 rounded-full bg-slate-50" />
+        </div>
+        <div className="grid min-h-[370px] grid-cols-[64px_1fr] bg-white sm:grid-cols-[150px_1fr]">
+          <aside className="border-r border-slate-100 p-3">
+            <div className="mb-5 flex size-9 items-center justify-center rounded-xl bg-primary-500">
+              <MessageCircle className="size-4 text-primary-foreground" />
+            </div>
+            <div className="space-y-2">
+              {["Inbox", "Contatos", "Relatórios"].map((item, index) => (
+                <div
+                  key={item}
+                  className={`flex items-center gap-2 rounded-lg p-2 text-[10px] font-semibold ${index === 0 ? "bg-primary-50 text-primary-800" : "text-slate-400"}`}
+                >
+                  {index === 0 ? (
+                    <Inbox className="size-3.5" />
+                  ) : index === 1 ? (
+                    <UsersRound className="size-3.5" />
+                  ) : (
+                    <BarChart3 className="size-3.5" />
+                  )}
+                  <span className="hidden sm:inline">{item}</span>
+                </div>
+              ))}
+            </div>
+          </aside>
+          <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr]">
+            <div className="hidden border-r border-slate-100 p-3 sm:block">
+              <p className="mb-3 text-[10px] font-bold text-slate-900">
+                Conversas{" "}
+                <span className="ml-1 rounded-full bg-primary-100 px-1.5 py-0.5 text-primary-700">
+                  12
+                </span>
+              </p>
+              {[
+                ["MC", "Marina Costa", "Quero visitar o imóvel"],
+                ["RL", "Rafael Lima", "Qual o valor do condomínio?"],
+                ["AS", "Ana Souza", "Obrigada pelo retorno!"],
+              ].map((chat, index) => (
+                <div
+                  key={chat[1]}
+                  className={`mb-2 rounded-xl p-2.5 ${index === 0 ? "bg-slate-50" : ""}`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="flex size-7 items-center justify-center rounded-full bg-slate-900 text-[8px] font-bold text-white">
+                      {chat[0]}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="truncate text-[9px] font-bold">{chat[1]}</p>
+                      <p className="truncate text-[8px] text-slate-400">
+                        {chat[2]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col bg-slate-50/50 p-4">
+              <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+                <span className="flex size-8 items-center justify-center rounded-full bg-slate-900 text-[9px] font-bold text-white">
+                  MC
+                </span>
+                <div>
+                  <p className="text-[10px] font-bold">Marina Costa</p>
+                  <p className="text-[8px] text-primary-600">online agora</p>
+                </div>
+                <span className="ml-auto rounded-full bg-violet-50 px-2 py-1 text-[8px] font-bold text-violet-600">
+                  IA ativa
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col justify-end gap-2 py-4">
+                <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-white p-3 text-[9px] leading-4 shadow-sm">
+                  Olá! Vi o apartamento no Água Verde. Ainda está disponível?
+                </div>
+                <div className="ml-auto max-w-[88%] rounded-2xl rounded-br-sm bg-primary-500 p-3 text-[9px] leading-4 text-primary-foreground">
+                  Olá, Marina! Está sim. Encontrei mais 2 opções parecidas para
+                  você. Quer agendar uma visita?
+                </div>
+                <div className="flex items-center gap-1 text-[8px] font-medium text-violet-500">
+                  <Sparkles className="size-3" /> Respondido pela IA em 0s
+                </div>
+              </div>
+              <div className="flex items-center rounded-xl bg-white p-2 shadow-sm">
+                <span className="text-[9px] text-slate-400">
+                  Digite sua mensagem...
+                </span>
+                <span className="ml-auto flex size-7 items-center justify-center rounded-lg bg-primary-500">
+                  <Send className="size-3 text-primary-foreground" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="animate-float absolute -bottom-6 -left-3 hidden rounded-2xl border border-white bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3">
+        <span className="flex size-9 items-center justify-center rounded-xl bg-primary-100 text-primary-700">
+          <Zap className="size-4" />
+        </span>
+        <div>
+          <p className="text-[9px] text-slate-400">Tempo de resposta</p>
+          <p className="text-sm font-bold text-slate-900">0 segundos</p>
+        </div>
+      </div>
+      <div
+        className="animate-float absolute -right-3 top-16 hidden rounded-2xl border border-white bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3"
+        style={{ animationDelay: "1s" }}
+      >
+        <CheckCircle2 className="size-8 text-primary-500" />
+        <div>
+          <p className="text-[9px] text-slate-400">Novo lead</p>
+          <p className="text-xs font-bold text-slate-900">
+            Distribuído com sucesso
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
