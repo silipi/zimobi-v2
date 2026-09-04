@@ -16,6 +16,7 @@ export function SiteFooter() {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-400">Navegue</p>
           <div className="mt-5 flex flex-col gap-3 text-sm">
             <Link href="/#recursos" className="hover:text-white">Recursos</Link>
+            <Link href="/#clara-ia" className="hover:text-white">Clara IA</Link>
             <Link href="/#integracoes" className="hover:text-white">Integrações</Link>
             <Link href="/#clientes" className="hover:text-white">Clientes</Link>
             <Link href="/contato" className="inline-flex items-center gap-1 hover:text-white">Contato <ArrowUpRight className="size-3.5" /></Link>

@@ -19,6 +19,7 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Star,
   UsersRound,
   WalletCards,
   Zap,
@@ -29,8 +30,8 @@ import { Reveal } from "@/components/reveal";
 const features = [
   {
     icon: Bot,
-    title: "IA no pré-atendimento",
-    text: "Responde, qualifica, busca imóveis e encaminha cada conversa para o setor certo — 24 horas por dia.",
+    title: "Clara IA",
+    text: "Responde, qualifica, busca imóveis e encaminha cada conversa para o setor certo, 24 horas por dia.",
     accent: "bg-violet-50 text-violet-600",
   },
   {
@@ -47,7 +48,7 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: "Gestão em tempo real",
+    title: "Dashboards",
     text: "Acompanhe origem, tempo de resposta, conversão e desempenho por atendente em dashboards claros.",
     accent: "bg-primary-50 text-primary-600",
   },
@@ -226,7 +227,7 @@ function ProductMockup() {
                   você. Quer agendar uma visita?
                 </div>
                 <div className="flex items-center gap-1 text-[8px] font-medium text-violet-500">
-                  <Sparkles className="size-3" /> Respondido pela IA em 4s
+                  <Sparkles className="size-3" /> Respondido pela IA em 0s
                 </div>
               </div>
               <div className="flex items-center rounded-xl bg-white p-2 shadow-sm">
@@ -247,7 +248,7 @@ function ProductMockup() {
         </span>
         <div>
           <p className="text-[9px] text-slate-400">Tempo de resposta</p>
-          <p className="text-sm font-bold text-slate-900">4 segundos</p>
+          <p className="text-sm font-bold text-slate-900">0 segundos</p>
         </div>
       </div>
       <div
@@ -297,6 +298,14 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
+            <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
+              {["WhatsApp API Oficial"].map((item) => (
+                <span key={item} className="flex items-center gap-1.5">
+                  <Check className="size-3.5 text-emerald-500" />
+                  {item}
+                </span>
+              ))}
+            </div>
           </Reveal>
           <Reveal delay={0.15}>
             <ProductMockup />
@@ -341,7 +350,7 @@ export default function Home() {
                 className="relative"
               >
                 <article className="h-full rounded-3xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl hover:shadow-slate-900/5">
-                  <div className="relative z-10 flex size-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg">
+                  <div className="relative z-10 flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
                     <step.icon className="size-5" />
                   </div>
                   <span className="mt-6 block text-xs font-bold text-primary-600">
@@ -474,7 +483,8 @@ export default function Home() {
           <Reveal>
             <span className="section-label">Integrações de verdade</span>
             <h2 className="text-balance mt-5 font-[family-name:var(--font-display)] text-4xl font-bold tracking-[-0.045em] sm:text-5xl">
-              Seu ecossistema continua. A Zimobi conecta tudo.
+              Seu ecossistema continua. A{" "}
+              <span className="text-primary">Zimobi</span> conecta tudo.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
               Os leads chegam dos principais portais e campanhas. O histórico, a
@@ -484,7 +494,7 @@ export default function Home() {
             <ul className="mt-8 space-y-4 text-sm font-semibold text-slate-700">
               {[
                 "Captação automática de portais e Meta Ads",
-                "Integrações com Vista/Loft CRM, Universal e Properfy",
+                "Integrações com CRM's",
                 "Dados sincronizados, sem retrabalho ou cadastro duplicado",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3">
@@ -505,8 +515,13 @@ export default function Home() {
             <div className="relative mx-auto aspect-square max-w-[520px]">
               <div className="absolute inset-[16%] rounded-full border border-dashed border-primary-300" />
               <div className="absolute inset-[32%] rounded-full border border-primary-100 bg-primary-50 shadow-[0_0_80px_color-mix(in_oklab,var(--color-primary)_20%,transparent)]" />
-              <div className="absolute inset-[39%] flex items-center justify-center rounded-3xl bg-slate-950 shadow-2xl">
-                <MessageCircle className="size-12 text-primary-400" />
+              <div className="absolute inset-[39%] flex items-center justify-center">
+                <Image
+                  src="/images/logo-zimobi-roxo.png"
+                  alt="Logo roxo da Zimobi"
+                  width={100}
+                  height={100}
+                />
               </div>
               {[
                 {
@@ -554,7 +569,7 @@ export default function Home() {
       <section className="bg-primary-400 py-20 text-primary-foreground">
         <div className="container-shell grid gap-10 text-center md:grid-cols-3">
           {[
-            ["4s", "para iniciar uma conversa"],
+            ["0s", "para iniciar uma conversa"],
             ["24/7", "de atendimento com IA"],
             ["1 painel", "para toda a sua operação"],
           ].map(([value, label], index) => (
@@ -582,11 +597,12 @@ export default function Home() {
             {testimonials.map((item, index) => (
               <Reveal key={item.name} delay={index * 0.08}>
                 <figure className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
-                  <div className="flex gap-1 text-primary-500">
+                  <div className="flex gap-0.5">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Sparkles
+                      <Star
                         key={star}
-                        className="size-3.5 fill-primary-500"
+                        className="size-4 fill-[#FABB05] text-[#FABB05]"
+                        strokeWidth={1}
                       />
                     ))}
                   </div>
