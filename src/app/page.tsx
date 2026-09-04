@@ -369,7 +369,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="recursos" className="bg-slate-950 py-24 text-white lg:py-32">
+      <section id="recursos" className="bg-[#120831] py-24 text-white lg:py-32">
         <div className="container-shell">
           <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
@@ -387,8 +387,8 @@ export default function Home() {
           </Reveal>
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <Reveal key={feature.title} delay={(index % 3) * 0.06}>
-                <article className="group h-full rounded-3xl border border-white/10 bg-white/[0.045] p-7 transition-all hover:border-primary-400/30 hover:bg-white/[0.075]">
+              <Reveal key={feature.title} delay={index * 0.06}>
+                <article className="group h-full rounded-3xl border border-primary/30 bg-white/[0.045] p-7 transition-all hover:border-primary-400/30 hover:bg-white/[0.075]">
                   <div
                     className={`flex size-11 items-center justify-center rounded-2xl ${feature.accent}`}
                   >
@@ -437,9 +437,9 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <span className="section-label">Conheça a Clara IA</span>
+            <span className="section-label">IA para Imobiliárias</span>
             <h2 className="text-balance mt-5 font-[family-name:var(--font-display)] text-4xl font-bold tracking-[-0.045em] text-slate-950 sm:text-5xl">
-              Sua especialista imobiliária disponível 24/7.
+              Clara IA
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
               A Clara atua na primeira camada do atendimento pelo WhatsApp.

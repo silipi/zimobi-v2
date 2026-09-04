@@ -23,9 +23,9 @@
   --foreground: #0f172a;
 }
 
-* {
+/* * {
   border-color: #e2e8f0;
-}
+} */
 
 html {
   scroll-behavior: smooth;
